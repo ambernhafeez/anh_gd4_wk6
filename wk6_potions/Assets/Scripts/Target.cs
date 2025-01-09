@@ -9,13 +9,19 @@ public class Target : MonoBehaviour
     private Rigidbody2D rb;
     public Vector2 randomForce, randomTorque;
     float xRange = 4;
-    float ySpawn = -1.4f;
+    float ySpawn = -1.2f;
     private GameManager gameManagerScript;
+    [SerializeField] int pointValue;
+    public ParticleSystem explosionParticle;
+    
+    public AudioClip clickSound;
+    private AudioSource audioSource;
     
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
         
         // add a random upwards force
         rb.AddForce(Vector3.up * Random.Range(randomForce.x, randomForce.y), ForceMode2D.Impulse);
@@ -28,6 +34,7 @@ public class Target : MonoBehaviour
 
         // get access to score
         gameManagerScript = (GameManager)FindAnyObjectByType(typeof(GameManager));
+
     }
     
     void Update() 
@@ -37,6 +44,8 @@ public class Target : MonoBehaviour
 
     private void OnMouseDown()
     {
+        audioSource.PlayOneShot(clickSound);
+        Instantiate(explosionParticle, transform.position, explosionParticle.transform.rotation);
         Destroy(gameObject);
     }
 
@@ -44,11 +53,10 @@ public class Target : MonoBehaviour
     {        
         if(gameObject.CompareTag("Good"))
         {
-            gameManagerScript.score += 1;
-            Debug.Log("Score = " + gameManagerScript.score);
+            gameManagerScript.UpdateScore(pointValue, 0);
         } else if(gameObject.CompareTag("Bad"))
         {
-            gameManagerScript.lives -= 1;
+            gameManagerScript.UpdateScore(0, pointValue);
         }
         
         if(other.gameObject.CompareTag("Cauldron"))
