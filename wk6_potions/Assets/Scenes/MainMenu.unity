@@ -132,6 +132,8 @@ GameObject:
   - component: {fileID: 145066164}
   - component: {fileID: 145066163}
   - component: {fileID: 145066166}
+  - component: {fileID: 145066168}
+  - component: {fileID: 145066169}
   m_Layer: 5
   m_Name: StartButton
   m_TagString: Untagged
@@ -269,7 +271,53 @@ MonoBehaviour:
   - eventID: 0
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 145066168}
+          m_TargetAssemblyTypeName: ButtonAnimator, Assembly-CSharp
+          m_MethodName: AnimateButton
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &145066168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145066161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91a53710cd4cc6747aa5f800f8c8d93d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &145066169
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145066161}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0ea2da618beb7364b8a0b30f6264db29, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &270328194
 GameObject:
   m_ObjectHideFlags: 0
@@ -589,7 +637,7 @@ MonoBehaviour:
   difficultyMenu: {fileID: 1034796458}
   optionsMenu: {fileID: 1966226425}
   _volumeSlider: {fileID: 1966226424}
-  _sfxSlider: {fileID: 1966226422}
+  _sfxSlider: {fileID: 0}
 --- !u!1 &476735272
 GameObject:
   m_ObjectHideFlags: 0
@@ -792,6 +840,9 @@ GameObject:
   - component: {fileID: 700993445}
   - component: {fileID: 700993444}
   - component: {fileID: 700993443}
+  - component: {fileID: 700993446}
+  - component: {fileID: 700993447}
+  - component: {fileID: 700993448}
   m_Layer: 5
   m_Name: Difficulty
   m_TagString: Untagged
@@ -913,6 +964,69 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 700993441}
   m_CullTransparentMesh: 1
+--- !u!114 &700993446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700993441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91a53710cd4cc6747aa5f800f8c8d93d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &700993447
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700993441}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 85037fda9ae1cde42b569a5d67a19cfe, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &700993448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700993441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 700993446}
+          m_TargetAssemblyTypeName: ButtonAnimator, Assembly-CSharp
+          m_MethodName: AnimateButton
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &766544237
 GameObject:
   m_ObjectHideFlags: 0
@@ -1384,7 +1498,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1034796459
 Transform:
   m_ObjectHideFlags: 0
@@ -1394,7 +1508,7 @@ Transform:
   m_GameObject: {fileID: 1034796458}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.239365, y: 7.277588, z: -0.9365763}
+  m_LocalPosition: {x: -11.7, y: 14.3, z: -0.9365763}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2906,12 +3020,24 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 912865679478892200, guid: f62e3892194e24e4f8c0b20435f4cb89, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2974883371338534085, guid: f62e3892194e24e4f8c0b20435f4cb89, type: 3}
       propertyPath: m_Name
       value: OptionsMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 2974883371338534085, guid: f62e3892194e24e4f8c0b20435f4cb89, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3672828852722734856, guid: f62e3892194e24e4f8c0b20435f4cb89, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3672828852722734856, guid: f62e3892194e24e4f8c0b20435f4cb89, type: 3}
+      propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3930424400122627451, guid: f62e3892194e24e4f8c0b20435f4cb89, type: 3}
@@ -2920,7 +3046,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3930424400122627451, guid: f62e3892194e24e4f8c0b20435f4cb89, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.1140137
+      value: 10.2
       objectReference: {fileID: 0}
     - target: {fileID: 3930424400122627451, guid: f62e3892194e24e4f8c0b20435f4cb89, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2958,6 +3084,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5357461468498197186, guid: f62e3892194e24e4f8c0b20435f4cb89, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6146898871303641824, guid: f62e3892194e24e4f8c0b20435f4cb89, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -2970,22 +3100,15 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8915283897699203149, guid: f62e3892194e24e4f8c0b20435f4cb89, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f62e3892194e24e4f8c0b20435f4cb89, type: 3}
---- !u!114 &1966226422 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4382025521353111566, guid: f62e3892194e24e4f8c0b20435f4cb89, type: 3}
-  m_PrefabInstance: {fileID: 1966226421}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1966226423 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3930424400122627451, guid: f62e3892194e24e4f8c0b20435f4cb89, type: 3}
@@ -3094,6 +3217,9 @@ GameObject:
   - component: {fileID: 2064865043}
   - component: {fileID: 2064865042}
   - component: {fileID: 2064865041}
+  - component: {fileID: 2064865046}
+  - component: {fileID: 2064865045}
+  - component: {fileID: 2064865044}
   m_Layer: 5
   m_Name: OptionsButton
   m_TagString: Untagged
@@ -3215,6 +3341,69 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2064865039}
   m_CullTransparentMesh: 1
+--- !u!95 &2064865044
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064865039}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 85037fda9ae1cde42b569a5d67a19cfe, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2064865045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064865039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91a53710cd4cc6747aa5f800f8c8d93d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2064865046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064865039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2064865045}
+          m_TargetAssemblyTypeName: ButtonAnimator, Assembly-CSharp
+          m_MethodName: AnimateButton
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2088208792
 GameObject:
   m_ObjectHideFlags: 0

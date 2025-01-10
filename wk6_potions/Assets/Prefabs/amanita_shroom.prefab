@@ -116,7 +116,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!58 &5067827139128469299
 CircleCollider2D:
@@ -169,7 +169,7 @@ MonoBehaviour:
   randomForce: {x: 6, y: 10}
   randomTorque: {x: 1, y: 1}
   pointValue: 1
-  explosionParticle: {fileID: 0}
+  explosionParticle: {fileID: 721375015799353845, guid: faab5e83e9e3c204a93615554e9bcd39, type: 3}
   clickSound: {fileID: 8300000, guid: 7e9ee6dc04a5d40d1a5dfc4beb9865e7, type: 3}
 --- !u!82 &1701149014085157907
 AudioSource:

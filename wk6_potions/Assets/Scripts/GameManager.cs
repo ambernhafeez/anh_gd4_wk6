@@ -3,6 +3,7 @@ using UnityEngine;
 using System.Collections;
 using TMPro;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class GameManager : MonoBehaviour
 {
@@ -139,5 +140,10 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0f; 
         optionsMenu.SetActive(true);
     }
+
+    // slicing action
+    // if mouse is pressed isSlicing == true
+    // if mouse is released isSlicing == false
+    // 
 
 }

@@ -8,11 +8,13 @@ public class ButtonManager : MonoBehaviour
     public GameObject difficultyMenu;
     public GameObject optionsMenu;
     public Slider _volumeSlider;
-    public Slider _sfxSlider;
+    //public AudioListener audioListener;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        //audioListener.GetComponent<AudioListener>();
+        
         difficultyMenu.SetActive(false);
         optionsMenu.SetActive(false);
 
@@ -39,6 +41,7 @@ public class ButtonManager : MonoBehaviour
 
     public void OpenSettings()
     {
+        Time.timeScale = 0f; 
         optionsMenu.SetActive(true);
     }
 
@@ -50,6 +53,7 @@ public class ButtonManager : MonoBehaviour
     public void BackButtonOptions()
     {
         optionsMenu.SetActive(false);
+        Time.timeScale = 1f; 
     }
 
     public void BackButtonDifficulty()
@@ -60,8 +64,10 @@ public class ButtonManager : MonoBehaviour
     // options menu sliders
     public void ChangeVolume()
     {
+        Debug.Log("Change volume function called! Volume: " + AudioListener.volume);
         AudioListener.volume = _volumeSlider.value;
         PlayerPrefs.SetFloat("MusicVolume", _volumeSlider.value);
+        Debug.Log("Player prefs volume: " + PlayerPrefs.GetFloat("MusicVolume"));
     }
 
     public void LoadVolume()
