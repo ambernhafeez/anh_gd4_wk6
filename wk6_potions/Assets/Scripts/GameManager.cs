@@ -21,11 +21,14 @@ public class GameManager : MonoBehaviour
     // pause screen UI
     public GameObject pauseScreen;
 
+    //options menu
+    public GameObject optionsMenu;
+
     // life system
     public GameObject[] potions;
     
     // difficulty
-    public int difficulty = 1;
+    public int difficulty;
     Vector2 spawnRate;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -36,9 +39,11 @@ public class GameManager : MonoBehaviour
         HUD.SetActive(true);
         newHighScoreText.SetActive(false);
         pauseScreen.SetActive(false);
+        optionsMenu.SetActive(false);
         lives = potions.Length;
 
         // set spawnRate based on difficulty
+        difficulty = PlayerPrefs.GetInt("Difficulty");
         if(difficulty == 1){spawnRate = new Vector2(0.6f, 2); }
         else if(difficulty == 2){spawnRate = new Vector2(0.3f, 1.5f); }
         else if(difficulty == 3){spawnRate = new Vector2(0.1f, 1f); }
@@ -54,6 +59,8 @@ public class GameManager : MonoBehaviour
     {
         while(!isGameOver && !isPaused)
         {
+            Time.timeScale = 1f; 
+            yield return new WaitForSeconds(1);
             // pick a random object to spawn 
             int spawnIndex = Random.Range(0, targets.Count);
             // spawn object
@@ -112,6 +119,7 @@ public class GameManager : MonoBehaviour
     public void PauseGame()
     {
         isPaused = true;
+        Time.timeScale = 0f; 
         pauseScreen.SetActive(true);
     }
 
@@ -120,10 +128,16 @@ public class GameManager : MonoBehaviour
     {
         isPaused = false;
         pauseScreen.SetActive(false);
+        optionsMenu.SetActive(false);
         StartCoroutine(spawnObjects());
     }
 
-    // options overlay
-
+    // options overlay button function
+    public void OpenOptions()
+    {
+        isPaused = true;
+        Time.timeScale = 0f; 
+        optionsMenu.SetActive(true);
+    }
 
 }

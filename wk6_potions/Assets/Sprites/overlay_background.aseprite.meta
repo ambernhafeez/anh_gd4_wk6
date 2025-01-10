@@ -121,7 +121,28 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
-  animatedSpriteImportData: []
+  animatedSpriteImportData:
+  - name: overlay_background
+    originalName: 
+    pivot: {x: 0.46305415, y: -0.47524753}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 203
+      height: 101
+    spriteID: d8eb699ab430d6f4ba269d48a3cebbd4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -130,7 +151,16 @@ ScriptedImporter:
     layerFlags: 0
     layerType: 0
     blendMode: 0
-    cells: []
+    cells:
+    - name: overlay_background
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 66
+        y: 48
+        width: 203
+        height: 101
+      spriteId: d8eb699ab430d6f4ba269d48a3cebbd4
     linkedCells: []
     parentIndex: -1
   platformSettings:
